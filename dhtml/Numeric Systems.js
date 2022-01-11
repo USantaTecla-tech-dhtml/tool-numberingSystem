@@ -63,19 +63,19 @@ function refresh(input){
 function development(steps, spans){
     var html = "";
     for(step of steps){
-        html += (step.coeficient>=0?"+&nbsp;":"")+ step.coeficient + "·" + 
+        html += (step.coeficient>=0?" ":"")+ step.coeficient + "·" + 
             step.base + "<sup>" + step.exponent + "</sup> ";
     }
     spans[0].innerHTML = html;
     var html = "";
     for(step of steps){
-        html += (step.coeficient>=0?"+&nbsp;":"")+ step.coeficient + "·" + 
+        html += (step.coeficient>=0?" ":"")+ step.coeficient + "·" + 
             step.base ** step.exponent;
     }
     spans[1].innerHTML = html;
     var html = "";
     for(step of steps){
-        html += (step.coeficient>=0?"+&nbsp;":"")+ step.coeficient * step.base ** step.exponent;
+        html += (step.coeficient>=0?" ":"")+ step.coeficient * step.base ** step.exponent;
     }
     spans[2].innerHTML = html;
     var acum = 0;
