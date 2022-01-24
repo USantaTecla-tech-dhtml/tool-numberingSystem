@@ -2,7 +2,7 @@ var numeralSystems = [
     {base: 2, name : "Sistema Binario", regExp : /[0-1]/},
     {base: 8, name : "Sistema Octal", regExp : /[0-7]/},
     {base: 10, name : "Sistema Decimal", regExp : /[0-9]/},
-    {base: 11, name : "Sistema Undecimal", regExp : /[0-9A]/},
+    {base: 11, name : "Sistema Undecimal", regExp : /[0-9A]/i},
     {base: 16, name : "Sistema Hexadecimal", regExp : /[0-9A-F]/i}
     ];
 
@@ -64,19 +64,19 @@ function development(steps, spans){
     var html = "";
     for(step of steps){
         console.log(step);
-        html += "+" + (step.coeficient>=0?" ":"")+ step.coeficient + "*" + 
+        html += " +" + step.coeficient + "x" + 
             step.base + "<sup>" + step.exponent + "</sup> ";
     }
     spans[0].innerHTML = html;
     var html = "";
     for(step of steps){
-        html += "+" + (step.coeficient>=0?" ":"")+ step.coeficient + "*" + 
+        html += " +" + step.coeficient + "x" + 
             step.base ** step.exponent;
     }
     spans[1].innerHTML = html;
     var html = "";
     for(step of steps){
-        html += (step.coeficient>=0?" ":"")+ step.coeficient * step.base ** step.exponent;
+        html += " +" + step.coeficient * step.base ** step.exponent;
     }
     spans[2].innerHTML = html;
     var acum = 0;
